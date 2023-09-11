@@ -26,25 +26,41 @@
 
 <body>
 
-</body>
-
-</html>
-
-<div class="container mt-5 ">
-    <div class="col-md-4 card card-body mt-5 m-auto">
-
-        <div align="center">
-            <h4>SignUp to the FlaskLogin</h4>
-
-            <button class="btn btn-light p-3 m-auto">
-                <i class="fa-brands fa-google"></i>
-                <span> Continue with Google</span></button>
+    <div class="container mt-5 ">
+        <div class="col-md-4 card card-body mt-5 m-auto">
+            <div align="center">
+                {% if logged_in %}
+                Welcome {{ username }}
+                <br>
+                <a href="/logout">logout</a>
+                {%else%}
 
 
-            <div class="flex justify-center pt-4 md:pt-6">
-                <div class="text-tfssecondary-500 text-sm text-center"><a href="/signin">Already have an account?</a>
+
+                <h4>SignUp to the FlaskLogin</h4>
+
+                <button class="btn btn-light p-3 m-auto" id="register_btn">
+                    <i class="fa-brands fa-google"></i>
+                    <span> SignUp with Google</span></button>
+
+
+                <div class="flex justify-center pt-4 md:pt-6">
+                    <div class="text-tfssecondary-500 text-sm text-center"><a href="/signin">Already have an
+                            account?</a>
+                    </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>
-</div>
+
+
+
+    <script>
+        document.getElementById('register_btn').onclick = () => location.href = "/googlelogin"
+    </script>
+
+
+</body>
+
+</html>

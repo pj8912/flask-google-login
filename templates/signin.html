@@ -26,26 +26,30 @@
 
 <body>
 
-</body>
+    <div class="container mt-5 ">
+        <div class="col-md-4 card card-body mt-5 m-auto">
 
-</html>
+            <div align="center">
+                <h4 style="font-size: 20px;">Welcome back, Log In to FlaskLogin</h4>
 
-<div class="container mt-5 ">
-    <div class="col-md-4 card card-body mt-5 m-auto">
-
-        <div align="center">
-            <h4 style="font-size: 20px;">Welcome back to FlaskLogin, signin</h4>
-
-            <button class="btn btn-light p-3 m-auto">
-                <i class="fa-brands fa-google"></i>
-                <span> Continue with Google</span></button>
+                <button class="btn btn-light p-3 m-auto" id="register_btn">
+                    <i class="fa-brands fa-google"></i>
+                    <span> Continue with Google</span></button>
 
 
-            <div class="flex justify-center pt-4 md:pt-6">
-                <div class="text-tfssecondary-500 text-sm text-center">
-                    <a href="/">Don't have an account?</a>
+                <div class="flex justify-center pt-4 md:pt-6">
+                    <div class="text-tfssecondary-500 text-sm text-center">
+                        <a href="/">Don't have an account?</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <script>
+        document.getElementById('register_btn').onclick = () => location.href = "/googlelogin_callback"
+    </script>
+
+</body>
+
+</html>

@@ -160,3 +160,4 @@ cython_debug/
 #.idea/
 myenv/
 /client_secret.json
+*.sqlite3
