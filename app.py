@@ -50,12 +50,6 @@ def login_is_required(function):
     return wrapper
 
 
-# @app.route("/login")
-# def login():
-#     authorization_url, state = flow.authorization_url()
-#     session["state"] = state
-#     return redirect(authorization_url)
-
 
 @app.route('/googlelogin')
 def google_login():
@@ -90,10 +84,6 @@ def callback():
         cursor.execute(sql,(id_info.get("name"),id_info.get("email"),id_info.get("sub"),"google"))
         conn.commit()    
 
-        # session["google_id"] = id_info.get("sub")
-        # session["name"] = id_info.get("name")
-        # session["email"] = id_info.get("email")
-
         return redirect("/")
     else:
         return redirect("/")
@@ -116,12 +106,6 @@ def index():
     else: 
         return render_template('index.html', logged_in=False)   
 
-
-# @app.route("/register")
-# # @login_is_required #check if logged in 
-# def protected_area():
-#     # return f"Hello {session['name']} - {session['google_id']}! <br/> <a href='/logout'><button>Logout</button></a>"
-#     return redirect('register.html')
 
 @app.route("/register")
 def register_page():

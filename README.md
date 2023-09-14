@@ -1,5 +1,5 @@
 # flask-google-login
-Register and Login using Google
+Register and Login with Google OAuth using Flask and SQLite
 
 
 ## Install requirements
@@ -7,10 +7,19 @@ Register and Login using Google
 ```shell
 pip install -r requirements.txt
 ```
+---
+<br>
 
-> In google developer console create a project and credentials
+> In google developer console create a project and 
+credentials
+
+<br>
+
+---
 
 ## Setup `.env` variables
+Create a `.env`add these variables and their respective values :
+
 - `APP_SECRET=` YOUR CLIENT SECRET
 - `CLIENT_ID=` YOUR CLIENT ID 
 
@@ -19,10 +28,15 @@ pip install -r requirements.txt
 
 
 ## Create SQLite database
-- Run `python created_db.py` to create your the sqlite databse `users.sqlite3` which will store the users on registration automatically.
+- Run 
+```
+python created_db.py
+```
+
+ to create your the sqlite databse `users.sqlite3` which will store the users on registration automatically.
 
 
-## Add `/callback(s)` URIs to Authorized URIs in google developer console
+## Add `/callback` URIs to Authorized URIs in google developer console
 
 - The app runs on `http://localhost:3000`
 - I use two different routes for login and registration
@@ -38,13 +52,17 @@ pip install -r requirements.txt
     and click `SAVE`  
 
 ## Start
-- Start application
-    ```
-    python app.py
-    ```
+```
+$ python app.py
+```
+Open : 
+```
+http://localhost:3000
+```
+
 ## Working 
 
-- Seperate flows for registeration and login
+- Seperate flows for registration and login
 
 - On registration the google's username, password and the oauthId which is unique per user is stored in the database and redirected to home
 
