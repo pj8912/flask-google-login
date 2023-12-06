@@ -64,6 +64,6 @@ http://localhost:3000
 
 - Seperate flows for registration and login
 
-- On registration the google's username, password and the oauthId which is unique per user is stored in the database and redirected to home
+- On registration, the user's google username, password and the oauthId which is unique per user is stored in the database and redirected to home
 
 - On login, the process takes flow and checks the email that is used for login is already in the database and creates a session redirecting to home where you can see a welcome message and logout link, or it will simply redirect to home
